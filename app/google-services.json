@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "998844985063",
+    "project_id": "schoolerp-3c3c1",
+    "storage_bucket": "schoolerp-3c3c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998844985063:android:34cd1d3ddce8dda29d3c42",
+        "android_client_info": {
+          "package_name": "com.krish.schoolerp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "998844985063-a6ge2bcdijnefd1uv3p9i92rrikupibo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOK5OGdr8Pe9yF6jIrQo49k3drPzw0CDo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "998844985063-a6ge2bcdijnefd1uv3p9i92rrikupibo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
