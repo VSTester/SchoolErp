@@ -3,6 +3,7 @@ package com.krish.schoolerp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -15,6 +16,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+import com.krish.schoolerp.model.UserModel;
+import com.krish.schoolerp.utils.FirebaseUtils;
 
 import java.util.regex.Pattern;
 
@@ -36,6 +39,8 @@ public class SignUpActivity extends AppCompatActivity {
     ProgressBar progressBar;
 
     private FirebaseAuth mAuth;
+
+    UserModel userModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,7 +108,7 @@ public class SignUpActivity extends AppCompatActivity {
         if(count==5)
         {
             authenticateUserWithEmailAndPassword(textUserName, textSchoolName, textAddress,
-                    textState, textCity, textPhoneNo, textRole, textEmailId, textPassword);
+                    textState, textCity, textPhoneNo, textRole, textEmailId, textPassword, "");
 
         }
 
@@ -112,7 +117,7 @@ public class SignUpActivity extends AppCompatActivity {
 
 
     private void authenticateUserWithEmailAndPassword(String textUserName, String textSchoolName, String textAddress,
-                                                      String textState, String textCity, String textPhoneNo, String textRole, String textEmailId, String textPassword) {
+                                                      String textState, String textCity, String textPhoneNo, String textRole, String textEmailId, String textPassword, String textClassName) {
         progressBar.setVisibility(View.VISIBLE);
 
         mAuth.createUserWithEmailAndPassword(textEmailId, textPassword)
@@ -123,7 +128,7 @@ public class SignUpActivity extends AppCompatActivity {
 
 
                             User user = new User(textUserName,textSchoolName,textAddress,
-                                    textState,textCity,textPhoneNo,textRole,textEmailId,textPassword);
+                                    textState,textCity,textPhoneNo,textRole,textEmailId,textPassword,textClassName);
                             FirebaseDatabase.getInstance().getReference("User").
                                     child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user)
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -131,7 +136,12 @@ public class SignUpActivity extends AppCompatActivity {
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if(task.isSuccessful()) {
                                                 Toast.makeText(SignUpActivity.this, "User Registered successfully", Toast.LENGTH_SHORT).show();
+                                                //for firebaseStore
+//                                                setUserDataInFireStoreDb(textUserName,textSchoolName,textAddress,
+//                                                        textState,textCity,textPhoneNo, textRole,textEmailId,textPassword," ");
                                                 progressBar.setVisibility(View.GONE);
+                                                Intent intent = new Intent(SignUpActivity.this, WelcomeActivity.class);
+                                                startActivity(intent);
                                             }else{
                                                 Toast.makeText(SignUpActivity.this, "User Fail to Registered", Toast.LENGTH_SHORT).show();
                                                 progressBar.setVisibility(View.GONE);
@@ -146,4 +156,18 @@ public class SignUpActivity extends AppCompatActivity {
                     }
                 });
     }
+
+//    void setUserDataInFireStoreDb(String textUserName, String textSchoolName, String textAddress,
+//                                                 String textState, String textCity, String textPhoneNo, String textRole, String textEmailId, String textPassword, String textClassName){
+//        userModel = new UserModel(textUserName,textSchoolName,textAddress,
+//                textState,textCity,textPhoneNo,textEmailId,textPassword,textClassName,textRole);
+//
+//        FirebaseUtils.currentUserDetails().set(userModel).addOnCompleteListener(task ->{
+//            if(task.isSuccessful()) {
+//              Toast.makeText(SignUpActivity.this, "User Registered on FireStore successfully", Toast.LENGTH_SHORT).show();
+//            }else{
+//                Toast.makeText(SignUpActivity.this, "User Fail to Registered on FireStore", Toast.LENGTH_SHORT).show();
+//            }
+//                });
+//    }
 }

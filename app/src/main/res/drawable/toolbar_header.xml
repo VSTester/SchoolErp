@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:bottom="40dp"
+        android:left="-100dp"
+        android:right="-100dp"
+        android:top="-70dp">
+
+        <shape
+            android:shape="oval">
+            <gradient
+                android:startColor="@color/colorToolBarStart"
+                android:endColor="@color/colorToolBarEnd"
+                android:angle="90"/>
+
+
+        </shape>
+
+    </item>
+</layer-list>

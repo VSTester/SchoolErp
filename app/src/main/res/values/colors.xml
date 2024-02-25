@@ -11,5 +11,12 @@
     <color name="signIn">#395B64</color>
     <color name="signUp">#A5C9CA</color>
     <color name="ResetPassword">#9E4784</color>
+    <color name="dashPrimary">#FC007E</color>
+    <color name="dashPrimaryDark">#C30052</color>
+    <color name="accent">#03A9F4</color>
+    <color name="colorBottomCardStart">#ca00ee</color>
+    <color name="colorBottomCardEnd">#D5A9E8</color>
+    <color name="colorToolBarStart">#EFB2EF</color>
+    <color name="colorToolBarEnd">#FB26F0</color>
 
 </resources>

@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".UpdateProfileActivity">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/imgCoverImage"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -15,21 +15,26 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        app:strokeColor="@color/black"
+        app:strokeWidth="10dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingButtonCoverProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
+        android:background="@color/signIn"
         android:clickable="true"
         android:onClick="imagePicker"
+        android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/imgCoverImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
+        app:shapeAppearanceOverlay="@style/Circular"
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -37,6 +42,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginStart="10dp"
+        android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/imgCoverImage"
         app:layout_constraintEnd_toStartOf="@+id/floatingButtonCoverProfile"
         app:layout_constraintHorizontal_bias="0.0"
@@ -44,21 +50,435 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:shapeAppearanceOverlay="@style/Circular"
+        app:strokeColor="@color/signIn"
+        app:strokeWidth="2dp"
         tools:srcCompat="@tools:sample/avatars" />
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingButtonProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:background="@color/signIn"
         android:clickable="true"
         android:onClick="imagePicker"
-        app:layout_constraintBottom_toBottomOf="@+id/imgProfileImage"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgCoverImage"
         app:layout_constraintEnd_toEndOf="@+id/imgProfileImage"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/imgProfileImage"
         app:layout_constraintTop_toTopOf="@+id/imgProfileImage"
         app:layout_constraintVertical_bias="1.0"
+        app:shapeAppearanceOverlay="@style/Circular"
         app:srcCompat="@android:drawable/ic_input_add" />
 
+    <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+    <!--        android:id="@+id/floatingButtonProfile"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:clickable="true"-->
+    <!--        android:onClick="imagePicker"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/imgProfileImage"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/imgProfileImage"-->
+    <!--        app:layout_constraintHorizontal_bias="1.0"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/imgProfileImage"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/imgProfileImage"-->
+    <!--        app:layout_constraintVertical_bias="1.0"-->
+    <!--        app:srcCompat="@android:drawable/ic_input_add" />-->
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/floatingButtonProfile">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/back"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/profile_UserNameHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:hint=" User Name"
+                android:inputType="textPersonName"
+                android:paddingBottom="10dp"
+                android:textSize="17dp"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp" />
+
+
+            <TextView
+                android:id="@+id/profile_UserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:textAlignment="center"
+                android:hint=" NA "
+                android:inputType="textPersonName"
+                android:paddingBottom="10dp"
+                android:textSize="17dp"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/profile_SchoolNameHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:hint=" School Name"
+                android:inputType="textPersonName"
+                android:paddingBottom="10dp"
+                android:textSize="17dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profile_UserName"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp" />
+
+            <TextView
+                android:id="@+id/profile_SchoolName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:hint=" NA "
+                android:textAlignment="center"
+                android:inputType="textPersonName"
+                android:paddingBottom="10dp"
+                android:textSize="17dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profile_UserName"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/profile_AddressHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:hint=" Address"
+                android:inputType="textPersonName"
+                android:paddingBottom="10dp"
+                android:textSize="17dp"
+                app:layout_constraintTop_toBottomOf="@+id/profile_SchoolName"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"
+                tools:layout_editor_absoluteX="10dp" />
+
+            <TextView
+                android:id="@+id/profile_Address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:textAlignment="center"
+                android:hint=" NA "
+                android:inputType="textPersonName"
+                android:paddingBottom="10dp"
+                android:textSize="17dp"
+                app:layout_constraintTop_toBottomOf="@+id/profile_SchoolName"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"
+                tools:layout_editor_absoluteX="10dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/profile_StateHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:hint=" State"
+                android:inputType="textPersonName"
+                android:paddingBottom="10dp"
+                android:textSize="17dp"
+                app:layout_constraintTop_toBottomOf="@+id/profile_Address"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/profile_State"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:textAlignment="center"
+                android:hint=" NA "
+                android:inputType="textPersonName"
+                android:paddingBottom="10dp"
+                android:textSize="17dp"
+                app:layout_constraintTop_toBottomOf="@+id/profile_Address"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"
+                tools:layout_editor_absoluteX="0dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/profile_CityHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:hint=" City"
+                android:inputType="textPersonName"
+                android:paddingBottom="10dp"
+                android:textSize="17dp"
+                app:layout_constraintTop_toBottomOf="@+id/profile_State"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/profile_City"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:textAlignment="center"
+                android:hint=" NA "
+                android:inputType="textPersonName"
+                android:paddingBottom="10dp"
+                android:textSize="17dp"
+                app:layout_constraintTop_toBottomOf="@+id/profile_State"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"
+                tools:layout_editor_absoluteX="0dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/profile_PhoneNoHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:hint=" Phone Number"
+                android:inputType="textPersonName"
+                android:paddingBottom="10dp"
+                android:textSize="17dp"
+                app:layout_constraintTop_toBottomOf="@+id/profile_City"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"
+                tools:layout_editor_absoluteX="0dp"/>
+
+            <EditText
+                android:id="@+id/profile_PhoneNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:textAlignment="center"
+                android:hint=" NA "
+                android:inputType="phone"
+                android:paddingBottom="10dp"
+                android:textSize="15dp"
+                app:layout_constraintTop_toBottomOf="@+id/profile_City"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"
+                tools:layout_editor_absoluteX="-16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/profile_EmailIdHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:hint=" Email Id"
+                android:inputType="textPersonName"
+                android:paddingBottom="10dp"
+                android:textSize="17dp"
+                app:layout_constraintTop_toBottomOf="@+id/profile_PhoneNo"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <EditText
+                android:id="@+id/profile_EmailId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:textAlignment="center"
+                android:hint=" NA "
+                android:inputType="textEmailAddress"
+                android:paddingBottom="10dp"
+                android:textSize="15dp"
+                app:layout_constraintTop_toBottomOf="@+id/profile_PhoneNo"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"
+                tools:layout_editor_absoluteX="4dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/profile_ClassHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:hint=" Class"
+                android:inputType="textPersonName"
+                android:paddingBottom="10dp"
+                android:textSize="17dp"
+                app:layout_constraintTop_toBottomOf="@+id/profile_EmailId"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"
+                tools:layout_editor_absoluteX="0dp" />
+
+
+            <EditText
+                android:id="@+id/profile_Class"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:hint=" NA "
+                android:textAlignment="center"
+                android:inputType="textPersonName"
+                android:paddingBottom="10dp"
+                android:textSize="15dp"
+                app:layout_constraintTop_toBottomOf="@+id/profile_EmailId"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"
+                tools:layout_editor_absoluteX="4dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+
+
+            <Button
+                android:id="@+id/btn_UpdateProfile"
+                android:layout_width="170dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_margin="0dp"
+                android:background="@drawable/button_sign_in"
+                android:onClick="updateProfileButtonClicked"
+                android:paddingTop="10dp"
+                android:text="Update Profile"
+                app:backgroundTint="@null" />
+    </LinearLayout>
+
+    <ProgressBar
+
+        android:id="@+id/profile_progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.44" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

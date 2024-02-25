@@ -1,36 +1,27 @@
 {
   "project_info": {
-    "project_number": "998844985063",
-    "project_id": "schoolerp-3c3c1",
-    "storage_bucket": "schoolerp-3c3c1.appspot.com"
+    "project_number": "851781089052",
+    "firebase_url": "https://schoolerp-84202-default-rtdb.firebaseio.com",
+    "project_id": "schoolerp-84202",
+    "storage_bucket": "schoolerp-84202.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:998844985063:android:34cd1d3ddce8dda29d3c42",
+        "mobilesdk_app_id": "1:851781089052:android:48ef652cc2885fb3d9acd9",
         "android_client_info": {
           "package_name": "com.krish.schoolerp"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "998844985063-a6ge2bcdijnefd1uv3p9i92rrikupibo.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBOK5OGdr8Pe9yF6jIrQo49k3drPzw0CDo"
+          "current_key": "AIzaSyADPjZXHzpDfz-tx-eZMyIfRp95e6lgSWU"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "998844985063-a6ge2bcdijnefd1uv3p9i92rrikupibo.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
